@@ -8,14 +8,14 @@ import static junit.framework.TestCase.assertEquals;
 public class CircleTest {
 
 
-    Circle s = new Circle();
+    Circle circle = new Circle();
 
     @Test
     public void getSquare() {
 
-        double methodValue = s.getSquare();
+        double methodValue = circle.getSquare();
 
-        double tempSquare = s.getRadius() * s.getRadius() * Math.PI;
+        double tempSquare = circle.getRadius() * circle.getRadius() * Math.PI;
 
         double res = MyAppUtils.round(tempSquare);
 
@@ -25,9 +25,9 @@ public class CircleTest {
     @Test
     public void getCircuitLength() {
 
-        double methodValue = s.getCircuitLength();
+        double methodValue = circle.getCircuitLength();
 
-        double tempLength = s.getRadius() * 2 * Math.PI;
+        double tempLength = circle.getRadius() * 2 * Math.PI;
 
         double res = MyAppUtils.round(tempLength);
 

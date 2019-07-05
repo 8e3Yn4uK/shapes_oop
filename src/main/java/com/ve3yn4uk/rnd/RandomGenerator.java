@@ -61,4 +61,16 @@ public class RandomGenerator {
 
         return res;
     }
+
+    /**
+     * this method generates random bases for trapezoids in range 1-15
+     */
+    public static double generateBases() {
+
+        double d = (random.nextDouble()) * (15 - 1) + 1;
+
+        double res = MyAppUtils.round(d);
+
+        return res;
+    }
 }

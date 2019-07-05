@@ -1,6 +1,5 @@
 import com.ve3yn4uk.shapes.impl.Triangle;
 import com.ve3yn4uk.utils.MyAppUtils;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -8,14 +7,14 @@ import static junit.framework.TestCase.assertEquals;
 
 public class TriangleTest {
 
-    Triangle t = new Triangle();
+    Triangle triangle = new Triangle();
 
     @Test
     public void getSquare() {
 
-        double methodValue = t.getSquare();
+        double methodValue = triangle.getSquare();
 
-        double tempRes = t.getCathetus_1() * t.getCathetus_2() * 0.5;
+        double tempRes = triangle.getCathetus_1() * triangle.getCathetus_2() * 0.5;
 
         double res = MyAppUtils.round(tempRes);
 
@@ -26,9 +25,9 @@ public class TriangleTest {
     @Test
     public void getHypotenuse() {
 
-        double methodValue = t.getHypotenuse();
+        double methodValue = triangle.getHypotenuse();
 
-        double tempRes = (t.getCathetus_1() * t.getCathetus_1()) + (t.getCathetus_2() * t.getCathetus_2());
+        double tempRes = (triangle.getCathetus_1() * triangle.getCathetus_1()) + (triangle.getCathetus_2() * triangle.getCathetus_2());
 
         double res = MyAppUtils.round(Math.sqrt(tempRes));
 
