@@ -1,6 +1,7 @@
-package com.ve3yn4uk.shapes;
+package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
+import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
 import com.ve3yn4uk.utils.MyAppUtils;
 
 public class Square extends AbstractShape {
@@ -20,7 +21,7 @@ public class Square extends AbstractShape {
     public String draw() {
 
         return "Shape:{Square" + ", square: " + getSquare() + ", color: " + getColor() +
-                ", side: " + side + ", perimeter: " + getPerimeter() +
+                ", side: " + getSide() + ", perimeter: " + getPerimeter() +
                 '}';
     }
 

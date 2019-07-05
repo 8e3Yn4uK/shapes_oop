@@ -1,9 +1,9 @@
-package com.ve3yn4uk.shapes;
+package com.ve3yn4uk.shapes.abstracrion;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 
 /**
- * this class discribes all common fields and attributes of shapes
+ * this class discribes all common attributes & behavior of shapes
  */
 public abstract class AbstractShape {
 
@@ -20,4 +20,6 @@ public abstract class AbstractShape {
     public String getColor(){
         return color;
     }
+
+
 }
