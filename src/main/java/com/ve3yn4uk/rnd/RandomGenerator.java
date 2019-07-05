@@ -73,4 +73,14 @@ public class RandomGenerator {
 
         return res;
     }
+
+    /**
+     * this method generates random values in range 1-4
+     */
+    public static int generateShape() {
+
+        int i = random.nextInt(4);
+
+        return i + 1;
+    }
 }
