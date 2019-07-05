@@ -49,4 +49,16 @@ public class RandomGenerator {
 
         return res;
     }
+
+    /**
+     * this method generates random cathetus for triangles in range 1-10
+     */
+    public static double generateCathetus() {
+
+        double d = (random.nextDouble()) * (10 - 1) + 1;
+
+        double res = MyAppUtils.round(d);
+
+        return res;
+    }
 }
