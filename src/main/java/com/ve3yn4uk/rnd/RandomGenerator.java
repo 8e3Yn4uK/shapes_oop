@@ -33,7 +33,7 @@ public class RandomGenerator {
      */
     public static int generateRadius() {
 
-        int i = random.nextInt(19);
+        int i = random.nextInt(20);
 
         return i + 1;
     }

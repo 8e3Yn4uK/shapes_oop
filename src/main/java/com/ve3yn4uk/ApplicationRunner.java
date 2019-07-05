@@ -12,9 +12,9 @@ public class ApplicationRunner {
 
         System.out.println("Input quantity of shapes (integer value, > 0)");
         int i = 0;
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
-             i = Integer.parseInt(br.readLine());
-             if (i <=0 ) throw new IOException("value must be > 0!");
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            i = Integer.parseInt(br.readLine());
+            if (i <= 0) throw new IOException("value must be > 0!");
         } catch (IOException e) {
             e.printStackTrace();
         }

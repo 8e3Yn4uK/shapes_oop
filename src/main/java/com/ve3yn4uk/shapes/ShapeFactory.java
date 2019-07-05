@@ -14,20 +14,24 @@ public class ShapeFactory {
 
     public List<AbstractShape> shapes;
 
-    public void createShapes(int i){
+    public void createShapes(int i) {
 
-         shapes = new ArrayList<>();
+        shapes = new ArrayList<>();
 
         for (int j = 0; j < i; j++) {
-            switch (RandomGenerator.generateShape()){
-                case 1: shapes.add(new Circle());
-                break;
-                case 2: shapes.add(new Square());
-                break;
-                case 3: shapes.add(new Trapezoid());
-                break;
-                case 4: shapes.add(new Triangle());
-                break;
+            switch (RandomGenerator.generateShape()) {
+                case 1:
+                    shapes.add(new Circle());
+                    break;
+                case 2:
+                    shapes.add(new Square());
+                    break;
+                case 3:
+                    shapes.add(new Trapezoid());
+                    break;
+                case 4:
+                    shapes.add(new Triangle());
+                    break;
             }
         }
 

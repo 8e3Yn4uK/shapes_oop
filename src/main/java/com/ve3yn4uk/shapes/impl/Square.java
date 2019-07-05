@@ -39,9 +39,9 @@ public class Square extends AbstractShape {
     /**
      * this method returns perimeter of our square :P
      */
-    public double getPerimeter(){
+    public double getPerimeter() {
 
-        double res = MyAppUtils.round(side*4);
+        double res = MyAppUtils.round(side * 4);
 
         return res;
     }

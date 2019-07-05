@@ -47,7 +47,7 @@ public class Triangle extends AbstractShape {
     /**
      * this method returns hypotenuse of triangle
      */
-    public double getHypotenuse(){
+    public double getHypotenuse() {
 
         double sum = cathetus_1 * cathetus_1 + cathetus_2 * cathetus_2;
 
