@@ -1,6 +1,7 @@
 package com.ve3yn4uk.shapes;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
+import com.ve3yn4uk.utils.MyAppUtils;
 
 public class Circle extends AbstractShape {
 
@@ -9,6 +10,10 @@ public class Circle extends AbstractShape {
     public Circle() {
         super();
         this.radius = RandomGenerator.generateRadius();
+    }
+
+    public int getRadius() {
+        return radius;
     }
 
     @Override
@@ -20,33 +25,29 @@ public class Circle extends AbstractShape {
     }
 
     /**
-     * this method returns square of circle in format x.xx
+     * this method returns square of circle
      */
     @Override
     public double getSquare() {
 
         double sqr = Math.PI * radius * radius;
 
-        double res = (double) Math.round(sqr * 100) / 100;
+        double res = MyAppUtils.round(sqr);
 
         return res;
     }
 
     /**
-     * this method returns circuit length of circle in format x.xx
+     * this method returns circuit length of circle
      */
     public double getCircuitLength() {
 
         double sl = Math.PI * radius * 2;
 
-        double res = (double) Math.round(sl * 100) / 100;
+        double res = MyAppUtils.round(sl);
 
         return res;
 
-    }
-
-    public int getRadius() {
-        return radius;
     }
 
 }

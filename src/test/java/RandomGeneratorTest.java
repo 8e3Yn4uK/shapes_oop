@@ -22,6 +22,14 @@ public class RandomGeneratorTest {
 
         int i = RandomGenerator.generateRadius();
 
-        assertEquals("error with generating radius", true, (i>0 && i<=50));
+        assertEquals("error with generating radius", true, (i>0 && i<=20));
+    }
+
+    @Test
+    public void generateSide() {
+
+        double d = RandomGenerator.generateSide();
+
+        assertEquals("error with generating side", true, (d>0 && d<=20));
     }
 }
