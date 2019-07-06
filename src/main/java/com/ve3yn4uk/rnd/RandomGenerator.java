@@ -2,6 +2,7 @@ package com.ve3yn4uk.rnd;
 
 import com.ve3yn4uk.utils.MyAppUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -12,7 +13,7 @@ public class RandomGenerator {
             Arrays.asList("black", "white", "yellow", "green", "brown", "red", "pink", "purple", "blue");
 
     public static List<String> getColors() {
-        List<String> tempColors = colors;
+        List<String> tempColors = new ArrayList<>(colors);
         return tempColors;
     }
 
