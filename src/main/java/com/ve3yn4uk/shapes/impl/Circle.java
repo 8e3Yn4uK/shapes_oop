@@ -2,15 +2,20 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
-import com.ve3yn4uk.utils.MyAppUtils;
+
+import static java.lang.Math.PI;
+import static com.ve3yn4uk.utils.MyAppUtils.round;
 
 public class Circle extends AbstractShape {
 
     private int radius;
 
     public Circle() {
-        super();
         this.radius = RandomGenerator.generateRadius();
+    }
+
+    public Circle(int radius) {
+        this.radius = radius;
     }
 
     public int getRadius() {
@@ -31,9 +36,7 @@ public class Circle extends AbstractShape {
     @Override
     public double getSquare() {
 
-        double sqr = Math.PI * radius * radius;
-
-        double res = MyAppUtils.round(sqr);
+        double res = round(PI * radius * radius);
 
         return res;
     }
@@ -43,12 +46,9 @@ public class Circle extends AbstractShape {
      */
     public double getCircuitLength() {
 
-        double sl = Math.PI * radius * 2;
-
-        double res = MyAppUtils.round(sl);
+        double res = round(PI * radius * 2);
 
         return res;
-
     }
 
 }

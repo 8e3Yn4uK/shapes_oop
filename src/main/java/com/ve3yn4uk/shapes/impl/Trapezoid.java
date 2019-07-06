@@ -2,7 +2,8 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
-import com.ve3yn4uk.utils.MyAppUtils;
+
+import static com.ve3yn4uk.utils.MyAppUtils.round;
 
 public class Trapezoid extends AbstractShape {
 
@@ -11,10 +12,15 @@ public class Trapezoid extends AbstractShape {
     private double height;
 
     public Trapezoid() {
-        super();
         this.base1 = RandomGenerator.generateBases();
         this.base2 = RandomGenerator.generateBases();
         this.height = RandomGenerator.generateBases();
+    }
+
+    public Trapezoid(double base1, double base2, double height) {
+        this.base1 = base1;
+        this.base2 = base2;
+        this.height = height;
     }
 
     public double getBase1() {
@@ -35,7 +41,6 @@ public class Trapezoid extends AbstractShape {
         return "Shape:{Trapezium" + ", square: " + getSquare() + ", color: " + getColor() +
                 ", base 1: " + getBase1() + ", base 2: " + getBase2() + ", height: " +
                 getHeight() + ", midline: " + getMidline() + '}';
-
     }
 
     /**
@@ -44,9 +49,7 @@ public class Trapezoid extends AbstractShape {
     @Override
     public double getSquare() {
 
-        double d = (base1 + base2) / 2 * height;
-
-        double res = MyAppUtils.round(d);
+        double res = round((base1 + base2) / 2 * height);
 
         return res;
     }
@@ -56,9 +59,7 @@ public class Trapezoid extends AbstractShape {
      */
     public double getMidline() {
 
-        double d = (base1 + base2) / 2;
-
-        double res = MyAppUtils.round(d);
+        double res = round((base1 + base2) / 2);
 
         return res;
     }

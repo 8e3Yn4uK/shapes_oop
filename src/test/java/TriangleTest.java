@@ -1,36 +1,37 @@
 import com.ve3yn4uk.shapes.impl.Triangle;
-import com.ve3yn4uk.utils.MyAppUtils;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static com.ve3yn4uk.utils.MyAppUtils.round;
+import static java.lang.Math.sqrt;
 
 
 public class TriangleTest {
 
-    Triangle triangle = new Triangle();
+    private Triangle triangle;
 
     @Test
-    public void getSquare() {
+    public void triangleSquareTest() {
 
-        double methodValue = triangle.getSquare();
+        triangle = new Triangle(15.0, 15.0);
 
-        double tempRes = triangle.getCathetus_1() * triangle.getCathetus_2() * 0.5;
+        double actualValue = triangle.getSquare();
 
-        double res = MyAppUtils.round(tempRes);
+        double expectedValue = round(15.0 * 15.0 * 0.5);
 
-        assertEquals("error with triangle square", true, methodValue == res);
+        assertEquals("error with triangle square", true, actualValue == expectedValue);
 
     }
 
     @Test
-    public void getHypotenuse() {
+    public void traingleHypotenuseTest() {
 
-        double methodValue = triangle.getHypotenuse();
+        triangle = new Triangle(10.0, 10.0);
 
-        double tempRes = (triangle.getCathetus_1() * triangle.getCathetus_1()) + (triangle.getCathetus_2() * triangle.getCathetus_2());
+        double actualValue = triangle.getHypotenuse();
 
-        double res = MyAppUtils.round(Math.sqrt(tempRes));
+        double expectedValue = round(sqrt(10.0 * 10.0 + 10.0 * 10.0));
 
-        assertEquals("error with triangle hypotenuse", true, methodValue == res);
+        assertEquals("error with triangle hypotenuse", true, actualValue == expectedValue);
     }
 }

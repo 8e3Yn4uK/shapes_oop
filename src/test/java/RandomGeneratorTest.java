@@ -8,7 +8,7 @@ import static junit.framework.TestCase.assertEquals;
 public class RandomGeneratorTest {
 
     @Test
-    public void generateColor(){
+    public void colorGeneratingTest(){
 
         String color = RandomGenerator.generateColor();
 
@@ -18,7 +18,7 @@ public class RandomGeneratorTest {
     }
 
     @Test
-    public void generateRadius(){
+    public void radiusGeneratingTest(){
 
         int i = RandomGenerator.generateRadius();
 
@@ -26,10 +26,35 @@ public class RandomGeneratorTest {
     }
 
     @Test
-    public void generateSide() {
+    public void sideGeneratingTest() {
 
         double d = RandomGenerator.generateSide();
 
         assertEquals("error with generating side", true, (d>0 && d<=20));
     }
+
+    @Test
+    public void cathetusGeneratingTest() {
+
+        double d = RandomGenerator.generateCathetus();
+
+        assertEquals("error with generating cathetus", true, (d>0 && d<=10));
+    }
+
+    @Test
+    public void basesGeneratingTest() {
+
+        double d = RandomGenerator.generateBases();
+
+        assertEquals("error with generating cathetus", true, (d>0 && d<=15));
+    }
+
+    @Test
+    public void shapeGeneratingTest() {
+
+        int i = RandomGenerator.generateShape();
+
+        assertEquals("error with generating integer for shape", true, (i>0 && i<=4));
+    }
+
 }

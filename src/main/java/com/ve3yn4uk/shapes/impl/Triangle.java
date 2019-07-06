@@ -2,7 +2,9 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
-import com.ve3yn4uk.utils.MyAppUtils;
+
+import static com.ve3yn4uk.utils.MyAppUtils.round;
+import static java.lang.Math.sqrt;
 
 public class Triangle extends AbstractShape {
 
@@ -10,9 +12,13 @@ public class Triangle extends AbstractShape {
     private double cathetus_2;
 
     public Triangle() {
-        super();
         this.cathetus_1 = RandomGenerator.generateCathetus();
         this.cathetus_2 = RandomGenerator.generateCathetus();
+    }
+
+    public Triangle(double cathetus_1, double cathetus_2) {
+        this.cathetus_1 = cathetus_1;
+        this.cathetus_2 = cathetus_2;
     }
 
     public double getCathetus_1() {
@@ -37,9 +43,7 @@ public class Triangle extends AbstractShape {
     @Override
     public double getSquare() {
 
-        double d = cathetus_1 * cathetus_2 * 0.5;
-
-        double res = MyAppUtils.round(d);
+        double res = round(cathetus_1 * cathetus_2 * 0.5);
 
         return res;
     }
@@ -49,9 +53,7 @@ public class Triangle extends AbstractShape {
      */
     public double getHypotenuse() {
 
-        double sum = cathetus_1 * cathetus_1 + cathetus_2 * cathetus_2;
-
-        double res = MyAppUtils.round(Math.sqrt(sum));
+        double res = round(sqrt(cathetus_1 * cathetus_1 + cathetus_2 * cathetus_2));
 
         return res;
     }

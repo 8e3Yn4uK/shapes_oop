@@ -1,36 +1,37 @@
 import com.ve3yn4uk.shapes.impl.Circle;
-import com.ve3yn4uk.utils.MyAppUtils;
 import org.junit.Test;
+
+import static java.lang.Math.PI;
+import static com.ve3yn4uk.utils.MyAppUtils.round;
 
 import static junit.framework.TestCase.assertEquals;
 
 
 public class CircleTest {
 
-
-    Circle circle = new Circle();
+    private Circle circle;
 
     @Test
-    public void getSquare() {
+    public void circleSquareTest() {
 
-        double methodValue = circle.getSquare();
+        circle = new Circle(10);
 
-        double tempSquare = circle.getRadius() * circle.getRadius() * Math.PI;
+        double actualValue = circle.getSquare();
 
-        double res = MyAppUtils.round(tempSquare);
+        double expectedValue = round(10 * 10 * PI);
 
-        assertEquals("error with circle square", true, methodValue == res);
+        assertEquals("error with circle square", true, actualValue == expectedValue);
     }
 
     @Test
-    public void getCircuitLength() {
+    public void circleLengthTest() {
 
-        double methodValue = circle.getCircuitLength();
+        circle = new Circle(20);
 
-        double tempLength = circle.getRadius() * 2 * Math.PI;
+        double actualValue = circle.getCircuitLength();
 
-        double res = MyAppUtils.round(tempLength);
+        double expectedValue = round(20 * 2 * PI);
 
-        assertEquals("error with circuit length", true, methodValue == res);
+        assertEquals("error with circuit length", true, actualValue == expectedValue);
     }
 }

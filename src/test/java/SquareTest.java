@@ -1,34 +1,34 @@
 import com.ve3yn4uk.shapes.impl.Square;
-import com.ve3yn4uk.utils.MyAppUtils;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static com.ve3yn4uk.utils.MyAppUtils.round;
 
 public class SquareTest {
 
-    Square square = new Square();
+    private Square square;
 
     @Test
-    public void getSquare() {
+    public void squareTest() {
 
-        double methodValue = square.getSquare();
+        square = new Square(15.0);
 
-        double tempSquare = square.getSide() * square.getSide();
+        double actualValue = square.getSquare();
 
-        double res = MyAppUtils.round(tempSquare);
+        double expectedValue = round(15.0 * 15.0);
 
-        assertEquals("error with square square :P", true, methodValue == res);
+        assertEquals("error with square square :P", true, actualValue == expectedValue);
     }
 
     @Test
-    public void getPerimeter() {
+    public void squarePerimeterTest() {
 
-        double methodValue = square.getPerimeter();
+        square = new Square(10.0);
 
-        double tempPerimeter = square.getSide() * 4;
+        double actualValue = square.getPerimeter();
 
-        double res = MyAppUtils.round(tempPerimeter);
+        double expectedValue = round(10.0 * 4);
 
-        assertEquals("error with square perimeter", true, methodValue == res);
+        assertEquals("error with square perimeter", true, actualValue == expectedValue);
     }
 }

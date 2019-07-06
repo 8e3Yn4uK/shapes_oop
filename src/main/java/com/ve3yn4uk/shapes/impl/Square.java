@@ -2,15 +2,19 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
-import com.ve3yn4uk.utils.MyAppUtils;
+
+import static com.ve3yn4uk.utils.MyAppUtils.round;
 
 public class Square extends AbstractShape {
 
     private double side;
 
     public Square() {
-        super();
         this.side = RandomGenerator.generateSide();
+    }
+
+    public Square(double side) {
+        this.side = side;
     }
 
     public double getSide() {
@@ -31,7 +35,7 @@ public class Square extends AbstractShape {
     @Override
     public double getSquare() {
 
-        double res = MyAppUtils.round(side * side);
+        double res = round(side * side);
 
         return res;
     }
@@ -41,7 +45,7 @@ public class Square extends AbstractShape {
      */
     public double getPerimeter() {
 
-        double res = MyAppUtils.round(side * 4);
+        double res = round(side * 4);
 
         return res;
     }
