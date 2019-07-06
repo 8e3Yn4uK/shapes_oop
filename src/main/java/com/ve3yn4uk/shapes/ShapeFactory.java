@@ -12,11 +12,14 @@ import java.util.List;
 
 public class ShapeFactory {
 
-    public List<AbstractShape> shapes;
+    private List<AbstractShape> shapes = new ArrayList<>();
+
+    public List<AbstractShape> getShapes() {
+        List<AbstractShape> shapes_copy = new ArrayList<>(shapes);
+        return shapes_copy;
+    }
 
     public void createShapes(int i) {
-
-        shapes = new ArrayList<>();
 
         for (int j = 0; j < i; j++) {
             switch (RandomGenerator.generateShape()) {
@@ -34,6 +37,5 @@ public class ShapeFactory {
                     break;
             }
         }
-
     }
 }

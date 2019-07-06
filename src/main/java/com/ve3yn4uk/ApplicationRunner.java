@@ -1,12 +1,16 @@
 package com.ve3yn4uk;
 
 import com.ve3yn4uk.shapes.ShapeFactory;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ApplicationRunner {
+
+    private static final Logger log = Logger.getLogger(ApplicationRunner.class.getName());
 
     public static void main(String[] args) {
 
@@ -16,12 +20,14 @@ public class ApplicationRunner {
             i = Integer.parseInt(br.readLine());
             if (i <= 0) throw new IOException("value must be > 0!");
         } catch (IOException e) {
-            e.printStackTrace();
+            log.log(Level.ERROR, "Exception: ", e);
+        } catch (NumberFormatException e) {
+            log.log(Level.ERROR, "Exception: ", e);
         }
 
         ShapeFactory shapeFactory = new ShapeFactory();
         shapeFactory.createShapes(i);
 
-        shapeFactory.shapes.forEach(e -> System.out.println(e.draw()));
+        shapeFactory.getShapes().forEach(e -> System.out.println(e.draw()));
     }
 }

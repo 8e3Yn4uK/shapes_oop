@@ -12,5 +12,7 @@
 * Клонировать репозиторий в любую IDE
 * Ввести в консоль команду: mvn clean install test surefire-report:report
 * Запустить класс ApplicationRunner (программа попросит ввести необходимое количество фигур, создаст и нарисует фигуры)
-* Отчет по тестам - target.site.surefire-report.html (открыть любым веб-браузером)
 
+* Отчет по тестам - target.site.surefire-report.html (открыть любым веб-браузером)
+* Логирование в файл C:\\TMP\\shapes_log_file.log
+* Запуск тестов - ApplicationTestRunner 

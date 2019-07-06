@@ -1,13 +1,16 @@
 package com.ve3yn4uk.rnd;
 
-import com.ve3yn4uk.utils.MyAppUtils;
-
+import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import static com.ve3yn4uk.utils.MyAppUtils.round;
+
 public class RandomGenerator {
+
+    private static final Logger log = Logger.getLogger(RandomGenerator.class.getName());
 
     private static List<String> colors =
             Arrays.asList("black", "white", "yellow", "green", "brown", "red", "pink", "purple", "blue");
@@ -24,6 +27,8 @@ public class RandomGenerator {
      */
     public static String generateColor() {
 
+        log.info("generating random color");
+
         int i = random.nextInt(colors.size() - 1);
 
         return colors.get(i);
@@ -33,6 +38,8 @@ public class RandomGenerator {
      * this method generates random radius for circles in range 1-20
      */
     public static int generateRadius() {
+
+        log.info("generating random radius");
 
         int i = random.nextInt(20);
 
@@ -44,9 +51,11 @@ public class RandomGenerator {
      */
     public static double generateSide() {
 
+        log.info("generating random side");
+
         double d = (random.nextDouble()) * (20 - 1) + 1;
 
-        double res = MyAppUtils.round(d);
+        double res = round(d);
 
         return res;
     }
@@ -56,9 +65,11 @@ public class RandomGenerator {
      */
     public static double generateCathetus() {
 
+        log.info("generating random cathetus");
+
         double d = (random.nextDouble()) * (10 - 1) + 1;
 
-        double res = MyAppUtils.round(d);
+        double res = round(d);
 
         return res;
     }
@@ -68,9 +79,11 @@ public class RandomGenerator {
      */
     public static double generateBases() {
 
+        log.info("generating random base");
+
         double d = (random.nextDouble()) * (15 - 1) + 1;
 
-        double res = MyAppUtils.round(d);
+        double res = round(d);
 
         return res;
     }
@@ -79,6 +92,8 @@ public class RandomGenerator {
      * this method generates random values in range 1-4
      */
     public static int generateShape() {
+
+        log.info("generating random value for shape");
 
         int i = random.nextInt(4);
 

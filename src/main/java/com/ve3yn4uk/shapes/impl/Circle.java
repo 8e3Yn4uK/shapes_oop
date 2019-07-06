@@ -2,15 +2,19 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
+import org.apache.log4j.Logger;
 
 import static java.lang.Math.PI;
 import static com.ve3yn4uk.utils.MyAppUtils.round;
 
 public class Circle extends AbstractShape {
 
+    private static final Logger log = Logger.getLogger(Circle.class.getName());
+
     private int radius;
 
     public Circle() {
+        log.info("creating new circle");
         this.radius = RandomGenerator.generateRadius();
     }
 
@@ -25,6 +29,8 @@ public class Circle extends AbstractShape {
     @Override
     public String draw() {
 
+        log.info("drawing circle");
+
         return "Shape:{Circle" + ", square: " + getSquare() + ", color: " + getColor() +
                 ", radius: " + getRadius() + ", circuit length: " + getCircuitLength() +
                 '}';
@@ -36,6 +42,8 @@ public class Circle extends AbstractShape {
     @Override
     public double getSquare() {
 
+        log.info("calculating square for circle");
+
         double res = round(PI * radius * radius);
 
         return res;
@@ -45,6 +53,8 @@ public class Circle extends AbstractShape {
      * this method returns circuit length of circle
      */
     public double getCircuitLength() {
+
+        log.info("calculating circuit length for circle");
 
         double res = round(PI * radius * 2);
 

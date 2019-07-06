@@ -2,16 +2,20 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
+import org.apache.log4j.Logger;
 
 import static com.ve3yn4uk.utils.MyAppUtils.round;
 
 public class Trapezoid extends AbstractShape {
+
+    private static final Logger log = Logger.getLogger(Trapezoid.class.getName());
 
     private double base1;
     private double base2;
     private double height;
 
     public Trapezoid() {
+        log.info("creating new trapezoid");
         this.base1 = RandomGenerator.generateBases();
         this.base2 = RandomGenerator.generateBases();
         this.height = RandomGenerator.generateBases();
@@ -38,7 +42,9 @@ public class Trapezoid extends AbstractShape {
     @Override
     public String draw() {
 
-        return "Shape:{Trapezium" + ", square: " + getSquare() + ", color: " + getColor() +
+        log.info("drawing trapezoid");
+
+        return "Shape:{Trapezoid" + ", square: " + getSquare() + ", color: " + getColor() +
                 ", base 1: " + getBase1() + ", base 2: " + getBase2() + ", height: " +
                 getHeight() + ", midline: " + getMidline() + '}';
     }
@@ -49,6 +55,8 @@ public class Trapezoid extends AbstractShape {
     @Override
     public double getSquare() {
 
+        log.info("calculating square for trapezoid");
+
         double res = round((base1 + base2) / 2 * height);
 
         return res;
@@ -58,6 +66,8 @@ public class Trapezoid extends AbstractShape {
      * this method returns midline of trapezoid
      */
     public double getMidline() {
+
+        log.info("calculating midline for trapezoid");
 
         double res = round((base1 + base2) / 2);
 
