@@ -2,11 +2,12 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
+import com.ve3yn4uk.shapes.abstracrion.ISquare;
 import org.apache.log4j.Logger;
 
 import static com.ve3yn4uk.utils.MyAppUtils.round;
 
-public class Square extends AbstractShape {
+public class Square extends AbstractShape implements ISquare {
 
     private static final Logger log = Logger.getLogger(Square.class.getName());
 
@@ -49,8 +50,9 @@ public class Square extends AbstractShape {
     }
 
     /**
-     * this method returns perimeter of our square :P
+     * this method returns perimeter of our square
      */
+    @Override
     public double getPerimeter() {
 
         log.info("calculating perimeter for square");

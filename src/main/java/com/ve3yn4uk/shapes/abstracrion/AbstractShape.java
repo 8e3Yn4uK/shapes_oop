@@ -17,7 +17,7 @@ public abstract class AbstractShape {
 
     public abstract double getSquare();
 
-    public String getColor() {
+    protected String getColor() {
         return color;
     }
 

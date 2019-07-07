@@ -21,8 +21,10 @@ public class ApplicationRunner {
             if (i <= 0) throw new IOException("value must be > 0!");
         } catch (IOException e) {
             log.log(Level.ERROR, "Exception: ", e);
+            System.out.println(e.getMessage());
         } catch (NumberFormatException e) {
             log.log(Level.ERROR, "Exception: ", e);
+            System.out.println("value must be integer!\n" + e.getMessage());
         }
 
         ShapeFactory shapeFactory = new ShapeFactory();

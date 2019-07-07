@@ -2,12 +2,13 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
+import com.ve3yn4uk.shapes.abstracrion.ITriangle;
 import org.apache.log4j.Logger;
 
 import static com.ve3yn4uk.utils.MyAppUtils.round;
 import static java.lang.Math.sqrt;
 
-public class Triangle extends AbstractShape {
+public class Triangle extends AbstractShape implements ITriangle {
 
     private static final Logger log = Logger.getLogger(Triangle.class.getName());
 
@@ -59,6 +60,7 @@ public class Triangle extends AbstractShape {
     /**
      * this method returns hypotenuse of triangle
      */
+    @Override
     public double getHypotenuse() {
 
         log.info("calculating hypotenuse for triangle");

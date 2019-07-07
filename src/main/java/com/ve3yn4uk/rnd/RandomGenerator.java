@@ -25,7 +25,7 @@ public class RandomGenerator {
     /**
      * this method generates random color (from existing list of colors)
      */
-    public static String generateColor() {
+    public static final String generateColor() {
 
         log.info("generating random color");
 

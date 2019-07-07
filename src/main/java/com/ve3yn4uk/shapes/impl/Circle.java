@@ -2,12 +2,13 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
+import com.ve3yn4uk.shapes.abstracrion.ICircle;
 import org.apache.log4j.Logger;
 
 import static java.lang.Math.PI;
 import static com.ve3yn4uk.utils.MyAppUtils.round;
 
-public class Circle extends AbstractShape {
+public class Circle extends AbstractShape implements ICircle {
 
     private static final Logger log = Logger.getLogger(Circle.class.getName());
 
@@ -52,6 +53,7 @@ public class Circle extends AbstractShape {
     /**
      * this method returns circuit length of circle
      */
+    @Override
     public double getCircuitLength() {
 
         log.info("calculating circuit length for circle");

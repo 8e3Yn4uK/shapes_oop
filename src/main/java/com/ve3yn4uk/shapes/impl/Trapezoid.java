@@ -2,11 +2,12 @@ package com.ve3yn4uk.shapes.impl;
 
 import com.ve3yn4uk.rnd.RandomGenerator;
 import com.ve3yn4uk.shapes.abstracrion.AbstractShape;
+import com.ve3yn4uk.shapes.abstracrion.ITrapezoid;
 import org.apache.log4j.Logger;
 
 import static com.ve3yn4uk.utils.MyAppUtils.round;
 
-public class Trapezoid extends AbstractShape {
+public class Trapezoid extends AbstractShape implements ITrapezoid {
 
     private static final Logger log = Logger.getLogger(Trapezoid.class.getName());
 
@@ -65,6 +66,7 @@ public class Trapezoid extends AbstractShape {
     /**
      * this method returns midline of trapezoid
      */
+    @Override
     public double getMidline() {
 
         log.info("calculating midline for trapezoid");
